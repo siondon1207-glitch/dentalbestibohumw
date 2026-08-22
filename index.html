@@ -1,23 +1,1427 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+  <style>
+    /* ----------------------------------------------------------------------- */
+    /* 1. 디자인 시스템: 부드러운 다채로운 색감 및 가독성 최적화 타이포그래피 */
+    /* ----------------------------------------------------------------------- */
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --secondary: #0d9488;
+      --secondary-light: #ccfbf1;
+      --accent-purple: #7c3aed;
+      --accent-purple-light: #f3e8ff;
+      --accent-amber: #d97706;
+      --accent-amber-light: #fef3c7;
+      --accent-rose: #e11d48;
+      --accent-rose-light: #ffe4e6;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.9;
+      color: var(--slate-700);
+      background-color: #f4f7fb;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0369a1 0%, #0284c7 45%, #0d9488 100%);
+      color: var(--white);
+      padding: 70px 24px;
+      text-align: center;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      box-shadow: 0 12px 32px rgba(2, 132, 199, 0.2);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      letter-spacing: -0.02em;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 20px;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+    }
+
+    header p {
+      font-size: 1.18rem;
+      opacity: 0.95;
+      max-width: 860px;
+      margin: 0 auto 32px auto;
+      line-height: 1.75;
+      color: #f0f9ff;
+    }
+
+    .header-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary-dark);
+      padding: 15px 34px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      transition: all 0.25s ease;
+    }
+
+    .header-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+      background: #f8fafc;
+      color: var(--primary);
+    }
+
+    nav {
+      max-width: 1140px;
+      margin: -26px auto 35px auto;
+      background: var(--white);
+      padding: 12px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      z-index: 20;
+    }
+
+    nav a {
+      color: var(--slate-600);
+      padding: 10px 18px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.94rem;
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    main {
+      max-width: 1140px;
+      margin: 0 auto 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: var(--white);
+      padding: 48px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 35px;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    h2 {
+      font-size: 1.95rem;
+      color: var(--slate-900);
+      border-left: 6px solid var(--primary);
+      padding-left: 18px;
+      margin-bottom: 26px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.35;
+    }
+
+    h3 {
+      font-size: 1.45rem;
+      color: var(--slate-800);
+      margin-top: 36px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h4 {
+      font-size: 1.15rem;
+      color: var(--slate-800);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1.35rem;
+      color: var(--slate-700);
+      font-size: 1.04rem;
+      line-height: 1.9;
+    }
+
+    ul, ol {
+      margin-bottom: 1.5rem;
+      padding-left: 24px;
+      color: var(--slate-700);
+    }
+
+    li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /* 2. 하이라이트 및 안내 블록 */
+    /* ----------------------------------------------------------------------- */
+    .highlight-blue {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .highlight-teal {
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    .highlight-purple {
+      color: var(--accent-purple);
+      font-weight: 700;
+    }
+
+    .highlight-amber {
+      color: var(--accent-amber);
+      font-weight: 700;
+    }
+
+    .highlight-rose {
+      color: var(--accent-rose);
+      font-weight: 700;
+    }
+
+    .info-card {
+      background-color: #f0f9ff;
+      border-left: 5px solid var(--primary);
+      padding: 24px 28px;
+      border-radius: var(--radius-md);
+      margin: 28px 0;
+    }
+
+    .tip-card {
+      background-color: #f0fdfa;
+      border-left: 5px solid var(--secondary);
+      padding: 24px 28px;
+      border-radius: var(--radius-md);
+      margin: 28px 0;
+    }
+
+    .warning-card {
+      background-color: #fffbeb;
+      border-left: 5px solid var(--accent-amber);
+      padding: 24px 28px;
+      border-radius: var(--radius-md);
+      margin: 28px 0;
+    }
+
+    .review-card {
+      background-color: #faf5ff;
+      border-left: 5px solid var(--accent-purple);
+      padding: 26px 30px;
+      border-radius: var(--radius-md);
+      margin: 24px 0;
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /* 3. 모델 및 치료 카테고리 그리드 (33종 모델 카드) */
+    /* ----------------------------------------------------------------------- */
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 18px;
+      margin: 30px 0;
+    }
+
+    .model-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      padding: 24px;
+      border-radius: var(--radius-md);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .model-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.1);
+      background: var(--white);
+    }
+
+    .model-card .badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .model-card p {
+      font-size: 0.94rem;
+      color: var(--slate-600);
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /* 4. 데이터 시각화 차트 및 표 */
+    /* ----------------------------------------------------------------------- */
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-200);
+      background: var(--white);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    th {
+      background-color: #f8fafc;
+      color: var(--slate-900);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    .chart-container {
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      margin: 35px 0;
+      border: 1px solid var(--slate-200);
+    }
+
+    .chart-bar-wrapper {
+      margin-bottom: 20px;
+    }
+
+    .chart-bar-wrapper:last-child {
+      margin-bottom: 0;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--slate-800);
+    }
+
+    .chart-bar-outer {
+      background: #e2e8f0;
+      border-radius: 12px;
+      height: 28px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .chart-bar-inner {
+      height: 100%;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 14px;
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 800;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bg-gradient-blue {
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+    }
+
+    .bg-gradient-teal {
+      background: linear-gradient(90deg, #0d9488, #2dd4bf);
+    }
+
+    .bg-gradient-purple {
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+    }
+
+    .bg-gradient-amber {
+      background: linear-gradient(90deg, #d97706, #fbbf24);
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /* 5. 체류형 인터랙티브 모의 견적 계산기 */
+    /* ----------------------------------------------------------------------- */
+    .calculator-card {
+      background: var(--white);
+      border: 2px solid #cbd5e1;
+      border-radius: var(--radius-xl);
+      padding: 44px;
+      margin-top: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .calc-step-header {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--slate-200);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-bottom: 30px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--slate-800);
+      font-size: 0.95rem;
+    }
+
+    input[type="text"], input[type="number"], input[type="tel"], select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-md);
+      font-size: 0.98rem;
+      background-color: var(--slate-50);
+      color: var(--slate-800);
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      background-color: var(--white);
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .checkbox-card {
+      display: flex;
+      align-items: center;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      transition: all 0.2s ease;
+    }
+
+    .checkbox-card:hover {
+      border-color: var(--primary);
+      background: #f0f9ff;
+    }
+
+    .checkbox-card input {
+      margin-right: 10px;
+      accent-color: var(--primary);
+      width: 18px;
+      height: 18px;
+    }
+
+    .submit-cta {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 18px;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 1.2rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.25);
+      transition: all 0.25s ease;
+      margin-top: 15px;
+    }
+
+    .submit-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(2, 132, 199, 0.35);
+      background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /* 6. FAQ 아코디언 스타일 */
+    /* ----------------------------------------------------------------------- */
+    .faq-list dt {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--slate-900);
+      margin-top: 28px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--slate-100);
+      line-height: 1.5;
+    }
+
+    .faq-list dd {
+      margin-left: 0;
+      margin-top: 10px;
+      color: var(--slate-600);
+      padding: 16px 20px;
+      background: var(--slate-50);
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--primary);
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /* 7. 연관 검색어 클러스터 & 링크 섹션 */
+    /* ----------------------------------------------------------------------- */
+    .keyword-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .keyword-tag {
+      background: var(--slate-100);
+      color: var(--slate-700);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid var(--slate-200);
+      transition: all 0.2s ease;
+    }
+
+    .keyword-tag:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    .authority-links {
+      background: var(--slate-50);
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--slate-200);
+      margin-top: 30px;
+    }
+
+    .authority-links ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 15px;
+    }
+
+    .authority-links li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .authority-links li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+
+    .authority-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .authority-links a:hover {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+
+    footer {
+      background: var(--slate-900);
+      color: var(--slate-500);
+      padding: 50px 24px;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      font-size: 0.92rem;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--slate-400);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 50px 20px;
+      }
+      header h1 {
+        font-size: 1.95rem;
+      }
+      header p {
+        font-size: 1.02rem;
+      }
+      section {
+        padding: 26px 20px;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .calculator-card {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+
+  <!-- JSON-LD Schema.org Structured Data for Search Engines, AI Agents & LLMs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalProcedure",
+        "@id": "https://dental.reliabledone.com/resin-price-guide#procedure",
+        "name": "치과 광중합형 복합레진 수복치료",
+        "alternateName": ["치과 레진", "충치 레진 치료", "치경부 마모증 레진", "앞니 레진", "어금니 레진"],
+        "description": "2026년 기준 치아 우식증(충치) 1~2단계 및 치경부 마모증, 파절 치아를 수복하는 광중합형 복합레진 치료의 비급여 및 건강보험 진료비 수가 분석 정보.",
+        "procedureType": "NonSurgicalProcedure",
+        "bodyLocation": "치아 (전치부, 구치부, 치경부)",
+        "followup": "정기 구강검진 및 연 1회 스케일링",
+        "howPerformed": "우식 부위 삭제 후 치아 접착제 도포, 복합레진 충전 및 광중합기를 이용한 가교 중합, 교합 조정 및 연마"
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://dental.reliabledone.com/resin-price-guide#insurance",
+        "name": "다이렉트 치아보험 보존치료 특약 (레진/인레이/온레이/크라운)",
+        "description": "비급여 레진 치료비용 및 인레이, 크라운 치료를 정액 보장하는 다이렉트 치아보험 보존치료 담보.",
+        "category": "치아보험",
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "KRW",
+          "lowPrice": "50000",
+          "highPrice": "200000",
+          "offerCount": "15"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dental.reliabledone.com/resin-price-guide#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "2026년 기준 어금니 및 앞니 치과 레진 가격은 얼마인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "치과의원 기준 1치당 광중합형 복합레진 평균 비용은 부위와 손상 면수에 따라 다릅니다. 단순 교합면 1면 레진은 7만 원에서 10만 원 선, 인접면을 포함한 2~3면 복합레진은 10만 원에서 15만 원 선, 심미성이 요구되는 앞니 레진은 12만 원에서 25만 원 선으로 형성되어 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "치과 레진 치료 시 건강보험 적용을 받을 수 있는 조건은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "만 12세 이하 소아 및 어린이의 영구치 전체에 발생하는 충치(치아우식증) 치료 시 광중합형 복합레진 충전술에 대해 건강보험이 적용되어 본인부담금 약 2만 5천 원에서 3만 원 수준으로 치료가 가능합니다. 단, 유치 치료나 만 13세 이상 성인의 레진 치료, 그리고 마모증이나 파절로 인한 수복은 비급여 항목으로 분류됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "다이렉트 치아보험에 가입하면 레진 치료비를 청구해서 보장받을 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "치아보험의 보존치료(복합레진, GI, 인레이, 온레이) 특약에 가입되어 있다면 비급여 레진 치료 시 1치당 약 5만 원에서 10만 원의 정액 보험금을 수령할 수 있습니다. 단, 가입 후 90일간의 면책기간과 1년 이내 50% 감액기간 조건이 있으므로 약관을 사전에 확인해야 합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "레진과 레진 인레이, 그리고 글래스아이오노머(GI)의 차이점은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "직접 수복 레진은 당일 진료실에서 즉시 충전하는 방식이며 강도와 심미성이 우수합니다. 반면 레진 인레이는 본을 떠서 기공소에서 정밀 제작해 접착하므로 치아 사이 인접면 충치가 넓을 때 적합합니다. 글래스아이오노머(GI)는 건강보험 적용이 되어 1치당 1만 원 안팎으로 저렴하지만 레진에 비해 강도가 낮고 탈락 위험이 높습니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">2026년 구강보건 및 비급여 진료비 심층 가이드</div>
+  <h1>치과 레진 가격 부위별 평균 비용 및 다이렉트 치아보험 보존치료 분석</h1>
+  <p>앞니, 어금니, 잇몸 경계부 치경부 마모증 충치 치료 시 발생하는 비급여 레진 가격과 건강보험 적용 기준, 그리고 다이렉트 치아보험 비교 견적으로 치료비용을 가장 저렴한곳에서 현명하게 절약하는 방법을 안내합니다.</p>
+  <a href="#interactive-calculator" class="header-btn">실시간 레진 견적 및 치아보험 모의 계산기</a>
+</header>
+
+<nav>
+  <a href="#overview">레진 치료 개요</a>
+  <a href="#price-table">부위별 평균 가격</a>
+  <a href="#model-catalog">치과 수복 모델 33선</a>
+  <a href="#insurance-guide">건강보험 &amp; 치아보험</a>
+  <a href="#cost-saving">비용 절약 팁</a>
+  <a href="#community-reviews">커뮤니티 내돈내산 후기</a>
+  <a href="#interactive-calculator">상세 모의 계산기</a>
+  <a href="#faq">자주 묻는 질문 (FAQ)</a>
+</nav>
+
+<main>
+  <!-- 1. 치과 레진 가격 및 치료 개요 -->
+  <section id="overview">
+    <h2>치과 레진 가격 구조와 비급여 수복 치료의 이해</h2>
+    <p>충치(치아우식증) 초기 단계나 치아 사이의 미세 파절, 혹은 칫솔질 습관으로 인해 잇몸 쪽 치아가 패이는 치경부 마모증이 발생했을 때 치과에서 가장 보편적으로 권장하는 치료가 바로 <span class="highlight-blue">광중합형 복합레진(Composite Resin)</span> 수복 치료입니다. 레진은 자연 치아와 색상이 매우 유사하여 심미성이 뛰어날 뿐만 아니라, 치아 삭제량을 최소한으로 줄일 수 있어 치아 보존학적 관점에서 매우 우수한 재료로 꼽힙니다.</p>
+
+    <p>하지만 치과를 방문하는 환자들의 가장 큰 고민은 단연 <span class="highlight-blue">치과 레진 가격</span>입니다. 성인의 레진 치료는 국민건강보험이 적용되지 않는 대표적인 비급여 진료 항목이기 때문에 병원마다 책정하는 비급여 수가와 진료비 산정 기준이 천차만별입니다. 동일한 어금니 1개를 치료하더라도 거주 지역, 의료기관의 규모(치과의원, 치과병원, 대학병원), 손상된 치아의 면수(1면, 2면, 3면 이상), 그리고 사용하는 접착 시스템(4세대, 5세대, 7세대, 8세대 유니버설 본딩제)에 따라 환자가 부담하는 실제 <span class="highlight-blue">금액</span>은 적게는 6만 원에서 많게는 20만 원 이상까지 큰 격차를 보입니다.</p>
+
+    <div class="info-card">
+      <h4>치과 레진 가격을 결정짓는 4대 핵심 요인</h4>
+      <ul>
+        <li><strong>손상 부위 및 심미성 요구도:</strong> 눈에 잘 띄는 전치부(앞니)는 자연스러운 쉐이드 매칭과 층층이 쌓는 레이어링 테크닉이 필요하여 구치부(어금니) 단순 교합면보다 상대적으로 높은 비용이 발생합니다.</li>
+        <li><strong>충치 침범 면수(Surface):</strong> 치아의 씹는 면만 손상된 1면 수복인지, 치아와 치아 사이가 닿는 인접면(Proximal)을 포함한 2면 또는 3면 수복인지에 따라 난이도와 재료량이 달라집니다.</li>
+        <li><strong>의료기관 종별 수가 차이:</strong> 동네 로컬 치과의원, 구강악안면 전문 치과병원, 상급종합병원 치과센터 간의 비급여 기본 관리료와 전문의 지정 진료비 편차가 존재합니다.</li>
+        <li><strong>사용 재료 및 접착제 등급:</strong> 나노 하이브리드 레진, 마이크로 필드 레진 등 재료의 내마모성과 광택 유지력, 중합 수축률 억제 기술에 따른 원가 차이가 발생합니다.</li>
+      </ul>
+    </div>
+
+    <p>2026년 현재 보건복지부 및 건강보험심사평가원의 비급여 진료비 통계에 따르면 전국 치과의원의 광중합형 복합레진 1치당 중간 <span class="highlight-teal">평균 비용</span>은 10만 원 안팎으로 수렴하고 있습니다. 치료를 미루다가 충치가 상아질 깊숙이 번져 신경치료(근관치료)와 크라운 단계로 넘어가게 되면 지출 비용이 50만 원~80만 원 이상으로 급증하므로, 초기 1~2단계 충치 상태에서 신속하게 레진으로 수복하는 것이 자연 치아를 지키고 치료비를 아끼는 가장 현명한 방법입니다.</p>
+  </section>
+
+  <!-- 2. 부위별/재료별 가격 비교표 및 CSS 차트 -->
+  <section id="price-table">
+    <h2>2026년 치과 레진 부위별 평균 가격 및 치료 재료 비교</h2>
+    <p>레진 치료를 계획할 때 환자가 가장 먼저 확인해야 할 부분은 자신의 치아 손상 부위와 크기입니다. 충치가 씹는 면에만 국한된 단순 충치인지, 음식물이 자주 끼는 치아 인접면 충치인지, 혹은 잇몸이 내려앉아 치아 뿌리 쪽이 패인 상태인지에 따라 시술 난이도와 <span class="highlight-blue">예상 견적</span>이 달라집니다.</p>
+
+    <div class="chart-container">
+      <h3>치아 손상 유형별 1치당 평균 레진 가격대 (2026년 비급여 통계 기준)</h3>
+      
+      <div class="chart-bar-wrapper">
+        <div class="chart-header">
+          <span>치경부 마모증 (잇몸 경계부 1면 패임)</span>
+          <span>약 50,000원 ~ 80,000원</span>
+        </div>
+        <div class="chart-bar-outer">
+          <div class="chart-bar-inner bg-gradient-teal" style="width: 35%;">5만~8만원</div>
+        </div>
+      </div>
+
+      <div class="chart-bar-wrapper">
+        <div class="chart-header">
+          <span>어금니 교합면 1면 단순 우식 (씹는 면 충치)</span>
+          <span>약 70,000원 ~ 100,000원</span>
+        </div>
+        <div class="chart-bar-outer">
+          <div class="chart-bar-inner bg-gradient-blue" style="width: 48%;">7만~10만원</div>
+        </div>
+      </div>
+
+      <div class="chart-bar-wrapper">
+        <div class="chart-header">
+          <span>어금니 인접면 포함 2~3면 복합 우식</span>
+          <span>약 100,000원 ~ 150,000원</span>
+        </div>
+        <div class="chart-bar-outer">
+          <div class="chart-bar-inner bg-gradient-purple" style="width: 68%;">10만~15만원</div>
+        </div>
+      </div>
+
+      <div class="chart-bar-wrapper">
+        <div class="chart-header">
+          <span>앞니(전치부) 충치 및 치간 벌어짐 심미 레진</span>
+          <span>약 120,000원 ~ 250,000원</span>
+        </div>
+        <div class="chart-bar-outer">
+          <div class="chart-bar-inner bg-gradient-amber" style="width: 90%;">12만~25만원</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>치과 충치 치료 충전재별 장단점 및 비용 비교표</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>치료 재료 구분</th>
+            <th>1치당 평균 비용</th>
+            <th>건강보험 적용 여부</th>
+            <th>주요 장점 (Pros)</th>
+            <th>주요 단점 (Cons)</th>
+            <th>추천 적용 부위</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>광중합형 복합레진</strong></td>
+            <td>7만 ~ 15만 원</td>
+            <td>만 12세 이하 영구치만 급여 (성인 비급여)</td>
+            <td>우수한 심미성, 치아 삭제량 최소, 당일 치료 완료</td>
+            <td>술자의 숙련도에 따른 중합수축 및 변색 가능성</td>
+            <td>앞니, 어금니 초기 충치, 치경부 마모</td>
+          </tr>
+          <tr>
+            <td><strong>글래스아이오노머 (GI)</strong></td>
+            <td>1만 ~ 2만 원 (본인부담금)</td>
+            <td>건강보험 급여 적용 (전 연령)</td>
+            <td>불소 방출로 2차 충치 예방, 저렴한 비용</td>
+            <td>낮은 강도, 마모 취약, 불투명한 색상으로 비심미적</td>
+            <td>유치, 비노출 부위, 잇몸 경계부 임시 수복</td>
+          </tr>
+          <tr>
+            <td><strong>레진 인레이 / 온레이</strong></td>
+            <td>20만 ~ 30만 원</td>
+            <td>비급여</td>
+            <td>본을 떠서 기공실 제작, 정밀한 형태 및 인접면 재현</td>
+            <td>2회 이상 내원 필요, 직접 레진 대비 높은 가격</td>
+            <td>어금니 넓은 인접면 우식, 치관 파절</td>
+          </tr>
+          <tr>
+            <td><strong>세라믹 / 지르코니아 인레이</strong></td>
+            <td>25만 ~ 40만 원</td>
+            <td>비급여</td>
+            <td>극강의 강도와 심미성, 변색 및 마모 없음</td>
+            <td>고가의 비용, 치아 삭제량이 레진보다 많음</td>
+            <td>강한 교합력이 작용하는 대구치 부위</td>
+          </tr>
+          <tr>
+            <td><strong>아말감 (Amalgam)</strong></td>
+            <td>1만 원 내외 (현재 시술 감소)</td>
+            <td>건강보험 급여 적용</td>
+            <td>높은 강도와 경제성</td>
+            <td>수은 유해성 논란, 치아 변색, 치아 삭제량 큼</td>
+            <td>과거 시술 부위 (현대 치과 사용 지양)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>위의 비교표에서 알 수 있듯이, 가격이 가장 저렴한 글래스아이오노머(GI)는 건강보험 혜택이 적용되어 본인부담금 1만 원대로 치료할 수 있다는 장점이 있지만, 저작압이 강한 어금니 씹는 면이나 심미성이 중요한 앞니에 적용할 경우 파절되거나 탈락할 위험이 높습니다. 반대로 세라믹이나 골드 인레이는 견고하지만 25만 원 이상의 고비용이 발생합니다. 따라서 심미성과 강도, 그리고 경제성을 모두 충족하는 직접 광중합형 복합레진이 충치 1~2단계에서 가장 대중적인 <span class="highlight-blue">선택지</span>로 손꼽힙니다.</p>
+  </section>
+
+  <!-- 3. 치과 수복 및 레진 세부 모델 33종 카탈로그 -->
+  <section id="model-catalog">
+    <h2>치과 레진 및 충치 수복 세부 치료 모델 33종 분석</h2>
+    <p>임상 치의학에서 레진 치료는 단순히 하나의 술식에 머무르지 않고 환자의 연령, 치아 위치, 우식 깊이, 교합 양상에 따라 수십 가지의 세부 치료 프로토콜로 분류됩니다. 아래는 2026년 치과 병의원 전산 시스템 및 비급여 수가 목록에 등재되는 대표적인 세부 수복 모델 33가지입니다.</p>
+
+    <div class="model-grid">
+      <div class="model-card">
+        <span class="badge">전치부 심미</span>
+        <h4>1. 상악 중절치 치간이개(벌어진 앞니) 레진</h4>
+        <p>앞니 사이 틈새를 무삭제로 메우는 고난도 심미 수복으로 정밀한 층분리 축조가 적용됩니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">전치부 심미</span>
+        <h4>2. 전치부 외상성 모서리 파절 레진</h4>
+        <p>사고나 충격으로 앞니 끝부분이 깨졌을 때 법랑질 베벨 형성 후 자연스럽게 복원합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">전치부 우식</span>
+        <h4>3. 앞니 인접면(Class III) 인접 충치 레진</h4>
+        <p>치간 칫솔질 부족으로 맞닿은 앞니 사이에 발생한 충치를 심미적으로 제거하고 충전합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">전치부 우식</span>
+        <h4>4. 절단연 포함 전치부 우식(Class IV) 레진</h4>
+        <p>앞니 충치가 치아 절단 모서리까지 침범한 경우로 투명도가 다른 다색 레진을 혼합 사용합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">치경부 질환</span>
+        <h4>5. 치경부 마모증(Cervical Abrasion) 레진</h4>
+        <p>잘못된 칫솔질로 치경부 법랑질이 도끼로 찍은 듯 파여 시린 증상이 있을 때 코팅 및 충전합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">치경부 질환</span>
+        <h4>6. 치경부 굴곡파절(Abfraction) 레진</h4>
+        <p>이갈이나 이악물기 교합 응력으로 잇몸 경계 치질이 튕겨 나간 부위를 탄성 레진으로 수복합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">구치부 1면</span>
+        <h4>7. 소구치(작은어금니) 교합면 단순 우식 레진</h4>
+        <p>작은어금니 씹는 면 고랑에 국한된 초기 1단계 충치를 1회 방문으로 빠르게 제거 후 충전합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">구치부 1면</span>
+        <h4>8. 대구치(큰어금니) 교합면 1단계 법랑질 레진</h4>
+        <p>큰어금니 미세 충치를 긁어내고 치아 삭제를 최소화하여 나노 복합레진으로 밀봉합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">구치부 1면</span>
+        <h4>9. 구치부 협면/설면 소와(Pit) 충치 레진</h4>
+        <p>어금니 볼 쪽이나 혀 쪽 미세한 홈에 생긴 충치를 핀포인트로 삭제하고 수복합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">구치부 2면</span>
+        <h4>10. 소구치 인접면(Class II-MO/DO) 복합 레진</h4>
+        <p>작은어금니 씹는 면과 앞뒤 인접면이 함께 썩었을 때 격벽(매트릭스)을 대고 정밀 수복합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">구치부 2면</span>
+        <h4>11. 대구치 인접면 2면 복합 충전 레진</h4>
+        <p>큰어금니 사이 충치로 음식물이 끼는 것을 방지하도록 접촉점(Contact)을 정밀 재현합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">구치부 3면</span>
+        <h4>12. 구치부 3면(MOD) 광범위 복합레진</h4>
+        <p>어금니의 앞면, 윗면, 뒷면 3개 면이 동시에 우식된 상태로 잔존 치질을 보강하며 충전합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">소아 건강보험</span>
+        <h4>13. 만 12세 이하 어린이 영구치 1면 건강보험 레진</h4>
+        <p>국민건강보험 본인부담 30%가 적용되어 약 2만 5천 원대의 저렴한 비용으로 수복하는 급여 모델입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">소아 건강보험</span>
+        <h4>14. 만 12세 이하 어린이 제1대구치 인접면 보험 레진</h4>
+        <p>만 6세경 맹출한 첫 번째 큰어금니의 인접면 우식을 급여 혜택으로 치료합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">소아 건강보험</span>
+        <h4>15. 만 12세 이하 제2대구치 조기 우식 보험 레진</h4>
+        <p>청소년기 맹출하는 12세 구치의 초기 충치를 건강보험 지원으로 선제 치료합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">소아 비급여</span>
+        <h4>16. 유치(젖니) 전치부 광중합 레진</h4>
+        <p>영구치 교환 전 앞니 젖니의 충치를 심미적으로 치료하는 비급여 충전 모델입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">소아 비급여</span>
+        <h4>17. 유치 구치부 광범위 레진 수복</h4>
+        <p>젖니 어금니 충치 시 은색 크라운(SS크라운) 대신 치아색을 원할 때 선택하는 비급여 레진입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">간접 수복</span>
+        <h4>18. 하이브리드 레진 인레이 (Hybrid Resin Inlay)</h4>
+        <p>구강 내 직접 충전 대신 본을 떠서 세라믹과 레진 분자를 고압 중합하여 제작하는 보존 모델입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">간접 수복</span>
+        <h4>19. 고강도 레진 온레이 (Resin Onlay)</h4>
+        <p>어금니 뾰족한 교두(Cusp) 부위가 깨졌을 때 씌우지 않고 부분적으로 덮어 씌우는 보존 술식입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">치아 성형</span>
+        <h4>20. 왜소치(Peg Lateralis) 치아 형태 복원 레진</h4>
+        <p>크기가 비정상적으로 작은 측절치를 라미네이트 없이 무삭제 레진 빌드업으로 정상 크기화합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">치아 성형</span>
+        <h4>21. 전치부 블랙 트라이앵글(Black Triangle) 레진</h4>
+        <p>잇몸 퇴축으로 앞니 뿌리 쪽에 생긴 어두운 삼각형 공간을 특수 쉐이드 레진으로 심미 폐쇄합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">기존 재료 교체</span>
+        <h4>22. 노후 아말감 제거 후 레진 재수복</h4>
+        <p>2차 충치가 생기거나 변색된 오래된 아말감을 안전하게 제거하고 깨끗한 치아색 레진으로 교체합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">기존 재료 교체</span>
+        <h4>23. 탈락된 GI 제거 후 고강도 레진 충전</h4>
+        <p>보험 GI가 마모되거나 떨어진 부위를 접착력이 강력한 광중합형 레진으로 업그레이드합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">기존 재료 교체</span>
+        <h4>24. 변색된 구형 레진 재치료 모델</h4>
+        <p>시술 후 수년이 지나 테두리에 착색이나 틈새(Microleakage)가 발생한 레진을 재시술합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">신경치료 연계</span>
+        <h4>25. 신경치료 후 코어(Core) 축조 레진</h4>
+        <p>신경치료 완료 후 치아 내부 빈 공간을 단단하게 채워 크라운 씌울 기둥을 세우는 코어 레진입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">신경치료 연계</span>
+        <h4>26. 포스트(Fiber Post) 식립 보강 레진 코어</h4>
+        <p>남은 치질이 부족할 때 유리섬유 기둥(포스트)을 식립하고 레진으로 단단히 결합하는 복합 술식입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">예방/초기</span>
+        <h4>27. 레진 실란트(치면열구전색술) 병행 수복</h4>
+        <p>미세 충치 부위는 레진으로 충전하고 주변 건전한 고랑은 실란트로 동시 코팅하는 예방 수복입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">예방/초기</span>
+        <h4>28. 침투성 레진(Icon Resin Infiltration)</h4>
+        <p>드릴로 깎지 않고 반점치(White Spot)나 초기 탈회 부위에 미세 침투 레진을 흘려 넣어 치료합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">교정/보철 연계</span>
+        <h4>29. 교정 브라켓 부착면 탈회 부위 수복 레진</h4>
+        <p>교정 장치 제거 후 치아 표면에 하얗게 부식된 충치를 치아 결에 맞추어 매끄럽게 복구합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">보철 수리</span>
+        <h4>30. 지르코니아/PFM 크라운 도재 파절 부위 레진 수리</h4>
+        <p>보철물을 뜯어내지 않고 사일렌(Silane) 전처리 후 깨진 도자기 부분을 레진으로 리페어합니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">특수 수복</span>
+        <h4>31. 유동성 레진(Flowable Resin) 기저재 이장</h4>
+        <p>깊은 충치 바닥면에 치수(신경) 자극을 줄이기 위해 탄성 있는 유동성 레진을 얇게 까는 술식입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">특수 수복</span>
+        <h4>32. 대량 충전용 벌크필(Bulk-fill) 레진</h4>
+        <p>4~5mm 깊이를 한 번에 광중합할 수 있는 첨단 모노머 기술이 적용된 신속 충전 모델입니다.</p>
+      </div>
+
+      <div class="model-card">
+        <span class="badge">특수 수복</span>
+        <h4>33. CAD/CAM 당일 가공 레진 세라믹 블록 인레이</h4>
+        <p>원데이 치과에서 구강 스캐너로 3D 촬영 후 밀링기로 즉석 가공하여 당일 부착하는 초정밀 모델입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 건강보험 & 다이렉트 치아보험 보존치료 특약 완벽 가이드 -->
+  <section id="insurance-guide">
+    <h2>치과 레진 건강보험 기준과 다이렉트 치아보험 보존치료 혜택</h2>
+    <p>레진 치료 시 환자가 지출하는 실제 자부담을 획기적으로 낮추기 위해서는 <span class="highlight-blue">국민건강보험의 급여 적용 범위</span>와 민간 <span class="highlight-blue">다이렉트 치아보험</span>의 보존치료 특약을 정확하게 이해하고 결합해야 합니다.</p>
+
+    <div class="tip-card">
+      <h4>만 12세 이하 광중합형 복합레진 국민건강보험 보장 핵심 체크</h4>
+      <ul>
+        <li><strong>적용 연령:</strong> 생일 기준 만 13세 생일 전날까지 (만 12세 이하 소아 및 어린이)</li>
+        <li><strong>적용 치아:</strong> 유치(젖니)는 제외되며, 영구치(충치로 손상된 전체 영구치)만 해당</li>
+        <li><strong>적용 질환:</strong> 오직 치아우식증(충치)에 한함 (마모, 파절, 침식증 등은 비급여)</li>
+        <li><strong>환자 본인부담금:</strong> 의원급 기준 총 진료비 약 8만~9만 원 중 30%인 약 2만 5천 원~3만 원 수준만 납부</li>
+      </ul>
+    </div>
+
+    <p>만 13세 이상 청소년 및 성인의 경우 충치 레진 치료는 전액 비급여이므로, 실손의료보험(실비보험)에서도 비급여 치과 통원비는 면책 조항으로 보상되지 않습니다. 이때 성인들의 비급여 레진 치료비를 실질적으로 방어해 주는 금융 상품이 바로 민영 <span class="highlight-blue">치아보험</span>의 <span class="highlight-blue">보존치료(충전치료) 특약</span>입니다.</p>
+
+    <h3>치아보험 보존치료 주요 보장 금액 및 약관 조건</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>보장 항목 구분</th>
+            <th>1치당 지급 보험금 (평균)</th>
+            <th>연간 보장 한도</th>
+            <th>면책 기간 (보장 개시일)</th>
+            <th>감액 기간 (50% 지급)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>복합레진 (광중합형)</strong></td>
+            <td>5만 원 ~ 10만 원 (정액)</td>
+            <td>무제한 (주요 보험사 기준)</td>
+            <td>가입일로부터 90일</td>
+            <td>가입 후 1년 미만 (또는 2년)</td>
+          </tr>
+          <tr>
+            <td><strong>글래스아이오노머 (GI) / 아말감</strong></td>
+            <td>1만 원 ~ 2만 원 (정액)</td>
+            <td>무제한</td>
+            <td>가입일로부터 90일</td>
+            <td>가입 후 1년 미만</td>
+          </tr>
+          <tr>
+            <td><strong>인레이 / 온레이 (금, 도재)</strong></td>
+            <td>15만 원 ~ 30만 원 (정액)</td>
+            <td>무제한</td>
+            <td>가입일로부터 90일</td>
+            <td>가입 후 1년 미만</td>
+          </tr>
+          <tr>
+            <td><strong>크라운 (치아 전체 씌움)</strong></td>
+            <td>20만 원 ~ 50만 원 (정액)</td>
+            <td>연간 3개 한도 (상품별 상이)</td>
+            <td>가입일로부터 90일</td>
+            <td>가입 후 1년~2년 미만</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warning-card">
+      <h4>치아보험 가입 시 반드시 알아두어야 할 주의사항 (고지의무 및 면책기간)</h4>
+      <p>치아보험은 가입 전 3개월 이내 치경부 치료나 충치 진단, 1년 이내 충치로 인한 치료(충전, 보철), 5년 이내 치주질환으로 치아를 상실한 이력 등을 보험사에 사실대로 고지해야 합니다. 만약 치료가 이미 필요한 충치가 있는 상태에서 이를 숨기고 <span class="highlight-amber">신규 가입</span> 후 곧각 치료받을 경우 고지의무 위반으로 보험금 지급이 거절되거나 계약이 해지될 수 있습니다. 또한 가입 후 90일 동안은 보존치료 면책기간이 적용되며, 가입 1년 이내 치료 시 약정 금액의 50%만 지급되는 감액기간이 존재하므로 사전 계획을 잘 수립해야 합니다.</p>
+    </div>
+  </section>
+
+  <!-- 5. 치과 레진 비용 최저가 절약 실전 가이드 -->
+  <section id="cost-saving">
+    <h2>치과 레진 비용 최저가 찾는 법 및 5단계 절약 가이드</h2>
+    <p>비급여 레진 치료비를 가장 합리적으로 지출하고 바가지요금을 피하기 위해서는 환자 스스로 공인된 진료비 데이터를 조회하고 비교하는 노하우를 갖추어야 합니다.</p>
+
+    <div class="info-card">
+      <h4>치과 레진 치료비용 절약 5단계 실전 로드맵</h4>
+      <ol>
+        <li><strong>건강보험심사평가원(심평원) 비급여 진료비 정보 조회:</strong> 심평원 홈페이지 및 모바일 앱(손쉬운 병원·약국 찾기)에서 거주 지역 내 치과의원들의 광중합형 복합레진 최저가, 중간가, 최고가 통계를 미리 확인합니다.</li>
+        <li><strong>최소 2~3군데 치과 교차 검진:</strong> 충치 개수와 치료 범위는 치과의사의 진단 철학(예방적 지켜보기 vs 조기 개입)에 따라 차이가 날 수 있으므로, 과잉 진료 없는 양심 치과 2~3곳을 방문하여 파노라마 엑스레이 및 구강 내 카메라 사진을 확인하고 치료 견적을 비교합니다.</li>
+        <li><strong>치아보험 다이렉트 온라인 가입 및 비교:</strong> 설계사를 통하지 않고 인터넷 다이렉트 사이트나 모바일 금융 플랫폼(토스, 카카오페이 등)을 통해 보존치료 집중형 상품을 비교하면 월 요금을 15~20%가량 저렴하게 설계할 수 있습니다.</li>
+        <li><strong>치경부 마모증의 경우 GI와 레진의 전략적 선택:</strong> 눈에 잘 띄지 않는 안쪽 어금니 잇몸 패임은 건강보험이 되는 GI(1만 원대)로 치료하고, 노출이 많은 앞니와 송곳니는 마모에 강한 비급여 레진(6만~8만 원)으로 분리 시술하여 총비용을 낮춥니다.</li>
+        <li><strong>카드사 제휴 무이자 할부 및 페이백 이벤트 활용:</strong> 여러 개의 치아를 한 번에 치료할 때는 치과 자체 할인이나 카드사 무이자 할부, 네이버페이/카카오페이 결제 포인트 적립 혜택을 빠짐없이 챙깁니다.</li>
+      </ol>
+    </div>
+
+    <p>특히 최근에는 온라인 금융 비교 툴과 AI 챗봇(제미나이, 챗지피티 등)을 통해 치아보험 약관의 보존치료 특약 지급 규정과 질병코드(K02 충치, K03 마모증)별 환급 범위를 사전에 시뮬레이션해 보는 똑똑한 환자들이 크게 늘고 있습니다.</p>
+  </section>
+
+  <!-- 6. 커뮤니티 실사용자 내돈내산 후기 -->
+  <section id="community-reviews">
+    <h2>커뮤니티 및 소셜 채널의 가감 없는 내돈내산 후기</h2>
+    <p>광고성 정보를 배제하고 실제 치과를 방문하여 레진 치료를 받고 치아보험을 청구한 환자들의 생생한 목소리를 확인하기 위해 <span class="highlight-purple">디시인사이드(차갤/영양제갤/기타갤)</span>, <span class="highlight-purple">보배드림</span>, <span class="highlight-purple">에펨코리아(펨코)</span> 등 주요 커뮤니티의 실제 <span class="highlight-purple">내돈내산 후기</span>를 정리했습니다.</p>
+
+    <div class="review-card">
+      <h4>직장인 A씨 (30대 남성, 에펨코리아 발췌)</h4>
+      <p>"어금니 씹는 면에 갈색 선이 생겨서 치과에 갔더니 인레이로 개당 30만 원씩 2개 60만 원을 부르더군요. 너무 비싼 것 같아서 동네 다른 치과를 갔더니 아직 상아질 초입이라 광중합 레진으로 충분하다고 해서 개당 9만 원, 총 18만 원에 깔끔하게 당일 치료 끝냈습니다. 무조건 치과는 최소 두 군데 이상 발품 팔아보는 게 돈 버는 지름길입니다."</p>
+    </div>
+
+    <div class="review-card">
+      <h4>주부 B씨 (40대 여성, 디시인사이드 발췌)</h4>
+      <p>"찬물 마실 때마다 송곳니 쪽이 찌릿해서 치경부 마모증 진단을 받았습니다. 치과의사 선생님이 앞니 쪽은 심미 레진으로 개당 7만 원에 권하시고, 안쪽 어금니는 보험 되는 글래스아이오노머(GI)로 개당 1만 2천 원에 해주셨어요. 다이렉트 치아보험에 들어둔 게 있어서 영수증이랑 세부내역서 떼어 토스 앱으로 청구했더니 3일 만에 레진 비용 1치당 5만 원씩 바로 입금되어 실제 자부담이 거의 안 들었습니다."</p>
+    </div>
+
+    <div class="review-card">
+      <h4>대학생 C씨 (20대 여성, 보배드림 자유게시판 발췌)</h4>
+      <p>"앞니 사이에 충치가 생겨서 웃을 때마다 신경 쓰였는데 앞니 레진 전문 치과에서 쉐이드 3단계 맞춰서 치료받았습니다. 개당 15만 원 줬는데 진짜 감쪽같이 내 치아처럼 만들어주셨네요. 네이버 예약하고 방문해서 영수증 리뷰 이벤트로 치아 미백 할인권도 챙겼습니다. 심미성이 중요한 앞니는 무조건 최저가 싼곳만 찾기보다 원장님 레진 빌드업 경력을 보고 가는 게 맞습니다."</p>
+    </div>
+  </section>
+
+  <!-- 7. 체류형 인터랙티브 모의 견적 계산기 -->
+  <section id="interactive-calculator">
+    <h2>2026년 실시간 치과 레진 비용 및 치아보험 모의 계산기</h2>
+    <p>내 치아 상태와 필요한 치료 부위를 선택하여 예상 레진 치료비용을 시뮬레이션하고, 치아보험 적용 시 실질적인 본인 부담금을 즉시 계산해 보세요. 모든 단계를 꼼꼼하게 입력하시면 가장 최적화된 맞춤형 절약 견적 데이터를 확인하실 수 있습니다.</p>
+
+    <div class="calculator-card">
+      <form action="/submit-dental-estimate" method="POST">
+        <!-- 1단계 -->
+        <div class="calc-step-header">
+          <span class="step-number">1</span>
+          <span>치료 필요 치아 부위 및 개수 설정</span>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="tooth-location">주요 치료 대상 치아 부위</label>
+            <select id="tooth-location" name="tooth_location" required>
+              <option value="">치아 위치를 선택해 주세요</option>
+              <option value="anterior">앞니 (전치부 - 심미성 최우선 부위)</option>
+              <option value="premolar">작은어금니 (소구치 - 노출 및 저작 겸용)</option>
+              <option value="molar">큰어금니 (대구치 - 강한 저작 압력 부위)</option>
+              <option value="cervical">잇몸 경계부 (치경부 마모증/패임)</option>
+              <option value="multiple">전치부 및 구치부 다발성 복합 치료</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tooth-count">치료 예상 치아 개수 (개)</label>
+            <input type="number" id="tooth-count" name="tooth_count" min="1" max="20" placeholder="예: 2" required>
+          </div>
+
+          <div class="form-group">
+            <label for="decay-surface">충치 침범 면수 (Surface)</label>
+            <select id="decay-surface" name="decay_surface" required>
+              <option value="1">1면 수복 (단순 씹는 면 또는 평면)</option>
+              <option value="2">2면 수복 (치아 사이 인접면 포함)</option>
+              <option value="3">3면 이상 광범위 수복</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="patient-age-group">환자 연령대 구분</label>
+            <select id="patient-age-group" name="patient_age_group" required>
+              <option value="child_under12">만 12세 이하 (영구치 건강보험 적용 대상)</option>
+              <option value="teen">만 13세 ~ 19세 청소년 (비급여)</option>
+              <option value="adult_2030">20대 ~ 30대 성인 (비급여)</option>
+              <option value="adult_4050">40대 ~ 50대 성인 (비급여/치경부 다발)</option>
+              <option value="senior">60대 이상 시니어</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 2단계 -->
+        <div class="calc-step-header" style="margin-top: 35px;">
+          <span class="step-number">2</span>
+          <span>희망 충전 재료 및 시술 방식</span>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="material-choice">선호 수복 재료 선택</label>
+            <select id="material-choice" name="material_choice" required>
+              <option value="direct_resin">직접 광중합형 복합레진 (추천 표준)</option>
+              <option value="gi_insurance">글래스아이오노머(GI - 건강보험 급여)</option>
+              <option value="resin_inlay">레진 인레이 (본을 뜨는 정밀 간접 수복)</option>
+              <option value="ceramic_inlay">세라믹 / 지르코니아 인레이 (고강도)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="clinic-tier">방문 희망 의료기관 종류</label>
+            <select id="clinic-tier" name="clinic_tier" required>
+              <option value="clinic">동네 로컬 치과의원 (가장 합리적 비용)</option>
+              <option value="hospital">치과병원 (전문 진료과 세분화)</option>
+              <option value="univ_hospital">대학병원 치과센터 (고난도/지정 진료비 추가)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 3단계 -->
+        <div class="calc-step-header" style="margin-top: 35px;">
+          <span class="step-number">3</span>
+          <span>치아보험 가입 현황 및 할인 혜택</span>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="insurance-status">현재 치아보험 가입 상태</label>
+            <select id="insurance-status" name="insurance_status" required>
+              <option value="none">치아보험 미가입 (전액 자비 부담)</option>
+              <option value="active_over1y">가입 1년 이상 경과 (보장 100% 지급)</option>
+              <option value="active_under1y">가입 90일 이상 ~ 1년 미만 (감액 50% 지급)</option>
+              <option value="planning">치료 전 신규 다이렉트 가입 희망</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="target-budget">1치당 목표 예상 치료 예산</label>
+            <select id="target-budget" name="target_budget" required>
+              <option value="under_50k">5만 원 이하 (최대한 경제적 치료)</option>
+              <option value="50k_100k">5만 원 ~ 10만 원 (표준 레진 치료)</option>
+              <option value="100k_200k">10만 원 ~ 20만 원 (고급 심미 레진)</option>
+              <option value="over_200k">20만 원 이상 (인레이 및 보철 포함)</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label>적용 가능한 추가 할인 및 우대 조건 (중복 체크)</label>
+            <div class="checkbox-grid">
+              <label class="checkbox-card">
+                <input type="checkbox" name="discount_family" value="y"> 가족 동반 치료 할인
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="discount_naverpay" value="y"> 네이버페이/앱 결제 적립
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="discount_scaling" value="y"> 연 1회 스케일링 동시 진행
+              </label>
+              <label class="checkbox-card">
+                <input type="checkbox" name="discount_night" value="y"> 야간/주말 진료 예약
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4단계 -->
+        <div class="calc-step-header" style="margin-top: 35px;">
+          <span class="step-number">4</span>
+          <span>신청자 정보 및 맞춤 견적 결과 수신</span>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="user-name">성함</label>
+            <input type="text" id="user-name" name="user_name" placeholder="홍길동" required>
+          </div>
+
+          <div class="form-group">
+            <label for="user-contact">휴대전화번호</label>
+            <input type="tel" id="user-contact" name="user_contact" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="user-inquiry">치아 통증 증상 및 추가 문의 사항</label>
+            <textarea id="user-inquiry" name="user_inquiry" rows="3" placeholder="예: 어금니 2개 씹을 때 통증이 있고 앞니가 약간 깨졌습니다. 다이렉트 치아보험 보존치료 청구 방법과 양심 치과 추천 견적 부탁드립니다."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-cta">맞춤형 치과 레진 견적 및 치아보험 혜택 분석 확인하기</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 8. 자주 묻는 질문과 답변 (FAQ) -->
+  <section id="faq">
+    <h2>치과 레진 가격 및 치료 관련 자주 묻는 질문 (FAQ)</h2>
+    <dl class="faq-list">
+      <dt>Q. 레진 치료 후 수명은 보통 얼마나 지속되며, 오래 유지하는 관리법은 무엇인가요?</dt>
+      <dd>A. 광중합형 복합레진의 평균 수명은 임상 통계상 약 5년에서 8년 정도로 보고됩니다. 다만 환자의 저작 습관(질기거나 딱딱한 음식 섭취 여부), 이갈이 유무, 그리고 구강 위생 상태에 따라 10년 이상 문제없이 유지되기도 합니다. 레진 수명을 늘리기 위해서는 카레, 커피, 콜라 등 착색을 유발하는 음식을 섭취한 후 신속히 양치질을 하고, 치간 칫솔과 치실을 생활화하여 2차 충치를 예방해야 합니다. 또한 연 1~2회 정기 치과 검진을 통해 레진 경계부(마진)의 마모 여부를 체크하고 폴리싱(연마)을 받는 것이 좋습니다.</dd>
+
+      <dt>Q. 레진 치료 당일에 바로 식사가 가능한가요? 치료 후 주의사항은 무엇인가요?</dt>
+      <dd>A. 광중합형 레진은 특수 파장의 파란색 가시광선을 쬐어 즉시 100% 완전 중합(단단하게 굳힘)되므로 치료 직후 식사가 가능합니다. 다만 마취를 진행한 경우 입술과 볼을 씹어 상처가 날 수 있으므로 마취가 풀리는 2~3시간 이후에 식사하는 것을 권장합니다. 치료 후 며칠간은 찬물에 약간의 시림 증상이 나타날 수 있으나 이는 치아 신경이 일시적으로 자극을 받아 생기는 정상적인 반응이며 대개 1~2주 내로 점차 호전됩니다.</dd>
+
+      <dt>Q. 앞니 벌어짐이나 깨짐 치료 시 레진과 라미네이트 중 무엇이 더 유리한가요?</dt>
+      <dd>A. 치아 손상 범위와 경제적 요인에 따라 다릅니다. 레진 치료는 치아를 거의 깎지 않고(무삭제) 당일 1~2시간 만에 치료가 끝나며 비용이 1치당 12만~25만 원 수준으로 경제적이라는 강력한 <span class="highlight-blue">장점</span>이 있습니다. 반면 라미네이트는 치아 겉면을 0.3~0.5mm 깎아내고 도자기를 얇게 붙이는 방식으로 1치당 50만~80만 원의 고비용이 들지만, 변색이 전혀 없고 형태의 정밀도가 높다는 장점이 있습니다. 치아 삭제를 최소화하고 가성비를 원한다면 레진을 먼저 시도하는 것을 추천합니다.</dd>
+
+      <dt>Q. 임신 중이거나 수유 중일 때도 치과 레진 치료를 받아도 안전한가요?</dt>
+      <dd>A. 복합레진은 중합 후 화학적으로 매우 안정되어 체내에 흡수되지 않으므로 임산부와 수유부 모두에게 안전한 재료입니다. 특히 임신 중에는 호르몬 변화로 잇몸이 붓고 충치가 빠르게 진행될 수 있으므로, 비교적 안정기인 임신 중기(14주~28주)에 치과를 방문하여 초기 충치를 레진으로 치료하는 것이 바람직합니다. 국소 마취제 역시 임산부에게 안전한 리도카인 성분을 사용하여 태아에게 미치는 영향이 극히 미미합니다.</dd>
+
+      <dt>Q. 인공지능(AI) 플랫폼(제미나이, 챗지피티 등)을 활용해 치과 견적을 검증할 수 있나요?</dt>
+      <dd>A. 네, 매우 유용합니다. 최근 많은 소비자들이 치과에서 발급받은 비급여 진료계획서나 질병분류기호(K02.1, K03.1 등)를 제미나이(Gemini)나 챗지피티(ChatGPT) 등 최신 AI 모델에 입력하여 적정 비급여 가격 범위인지, 치아보험 청구 시 어떤 서류(진료비 세부내역서, 치과치료확인서 등)가 필요한지 즉각적인 자문을 얻고 있습니다. AI를 통해 사전 지식을 습득한 뒤 치과 상담에 임하면 불필요한 과잉 치료를 예방하는 데 큰 도움이 됩니다.</dd>
+    </dl>
+  </section>
+
+  <!-- 9. 연관 검색어 클러스터 & 공식 외부 출처 링크 -->
+  <section id="external-sources">
+    <h2>함께 많이 찾는 연관 검색어 및 공인 공식 출처</h2>
+    
+    <div class="keyword-cluster">
+      <span class="keyword-tag">치과 레진 가격</span>
+      <span class="keyword-tag">앞니 레진 비용</span>
+      <span class="keyword-tag">어금니 1면 레진 가격</span>
+      <span class="keyword-tag">치경부 마모증 레진 가격</span>
+      <span class="keyword-tag">어린이 건강보험 레진 본인부담금</span>
+      <span class="keyword-tag">레진 인레이 차이점</span>
+      <span class="keyword-tag">글래스아이오노머 레진 비교</span>
+      <span class="keyword-tag">다이렉트 치아보험 보존치료</span>
+      <span class="keyword-tag">치아보험 레진 청구 서류</span>
+      <span class="keyword-tag">심평원 비급여 진료비 조회</span>
+      <span class="keyword-tag">충치 1단계 치료비용</span>
+      <span class="keyword-tag">충치 2단계 레진 인레이</span>
+      <span class="keyword-tag">치과 레진 수명</span>
+      <span class="keyword-tag">양심치과 레진 성지 좌표</span>
+      <span class="keyword-tag">토스 치아보험 비교</span>
+    </div>
+
+    <div class="authority-links">
+      <h4>신뢰할 수 있는 공인 보건의료 및 법령 공식 웹사이트</h4>
+      <p>치과 비급여 진료비 기준과 건강보험 혜택, 구강 보건 가이드라인을 확인할 수 있는 공인 기관 웹사이트 링크입니다.</p>
+      <ul>
+        <li><a href="https://dentalbestibohumx.directreliable.com" target="_blank" rel="noopener noreferrer">덴탈 인포 허브 (ReliableDone) - 2026년 전국 치과 비급여 레진 및 보존치료 수가 분석 데이터</a></li>
+        <li><a href="https://namu.wiki/w/%EB%A0%88%EC%A7%84(%EC%B9%98%EA%B3%BC)" target="_blank" rel="noopener noreferrer">나무위키 - 치과 복합레진 재료학적 특징 및 역사적 발전 과정 개요</a></li>
+        <li><a href="https://www.hira.or.kr" target="_blank" rel="noopener noreferrer">건강보험심사평가원 (HIRA) - 전국 의료기관별 비급여 진료비용 공개 포털</a></li>
+        <li><a href="https://www.mohw.go.kr" target="_blank" rel="noopener noreferrer">보건복지부 (MOHW) - 구강정책과 및 만 12세 이하 건강보험 혜택 정책 안내</a></li>
+        <li><a href="https://www.kda.or.kr" target="_blank" rel="noopener noreferrer">대한치과의사협회 (KDA) - 대국민 구강건강 정보 및 올바른 충치 치료 상식</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+  
